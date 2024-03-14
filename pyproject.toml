@@ -1,7 +1,7 @@
 [project]
 name = "voice-puppet"
 version = "0.1.0"
-description = "Add your description here"
+description = "Experimentation with voice cloning for performance."
 authors = [
     { name = "Sam Lavigne", email = "splavigne@gmail.com" }
 ]
