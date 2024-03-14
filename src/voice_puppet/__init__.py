@@ -1,6 +1,7 @@
 import warnings
 import os
 import re
+from pathlib import Path
 from dataclasses import dataclass
 
 warnings.filterwarnings("ignore")
@@ -84,6 +85,24 @@ def generate(text: str, source: str, output: str = "output.wav"):
 
 def generate_from_script(script_content: str, voices: str, output: str):
     script = parse_script(script_content)
+    Path(output).mkdir(parents=True, exist_ok=True)
+    for scene in script.scenes:
+        scene_dir = os.path.join(output, f"scene_{scene.number:02}")
+        Path(scene_dir).mkdir(parents=True, exist_ok=True)
+        for index, line in enumerate(scene.lines):
+            dest_filename = os.path.join(
+                scene_dir, f"scene_{scene.number:02}_{index:04}.wav"
+            )
+            source_filename = os.path.join(voices, f"{line.speaker}.wav")
+            if line.mood != "default":
+                source_filename = os.path.join(
+                    voices, f"{line.speaker}_{line.mood}.wav"
+                )
+            if not os.path.exists(source_filename):
+                print(f"Voice file not found: {source_filename}")
+                continue
+            # print(source_filename, dest_filename)
+            generate(line.content, source_filename, dest_filename)
 
 
 def parse_script(content: str) -> Script:
@@ -172,16 +191,9 @@ def main():
         generate(text=args.text, source=args.clone, output=output_name)
 
     elif args.script:
-        # load_tts(model=args.model, device=args.device)
-        generate_from_script(args.script.read(), args.voices, args.output)
+        load_tts(model=args.model, device=args.device)
+        output_name = args.output or "output/"
+        generate_from_script(args.script.read(), args.voices, output_name)
 
     else:
         print("Please provide a script or text to generate audio from.")
-
-
-if __name__ == "__main__":
-    import sys
-
-    # script = parse_script(sys.stdin.read())
-    # generate(script)
-    test_generate()
