@@ -10,11 +10,9 @@
 -e file:.
 absl-py==2.1.0
     # via tensorboard
-accelerate==0.28.0
-    # via k-diffusion
 aiofiles==23.2.1
     # via gradio
-aiohttp==3.8.6
+aiohttp==3.9.3
     # via tts
 aiosignal==1.3.1
     # via aiohttp
@@ -27,10 +25,6 @@ anyascii==0.3.2
 anyio==4.3.0
     # via httpx
     # via starlette
-appdirs==1.4.4
-    # via wandb
-async-timeout==4.0.3
-    # via aiohttp
 attrs==23.2.0
     # via aiohttp
     # via jsonschema
@@ -43,32 +37,36 @@ bangla==0.0.2
     # via tts
 blinker==1.7.0
     # via flask
+blis==0.7.11
+    # via thinc
 bnnumerizer==0.0.2
     # via tts
 bnunicodenormalizer==0.1.6
     # via tts
+catalogue==2.0.10
+    # via spacy
+    # via srsly
+    # via thinc
 certifi==2024.2.2
     # via httpcore
     # via httpx
     # via requests
-    # via sentry-sdk
 cffi==1.16.0
     # via soundfile
 charset-normalizer==3.3.2
-    # via aiohttp
     # via requests
-clean-fid==0.1.35
-    # via k-diffusion
 click==8.1.7
     # via flask
     # via nltk
     # via typer
     # via uvicorn
-    # via wandb
-clip-anytorch==2.6.0
-    # via k-diffusion
+cloudpathlib==0.16.0
+    # via weasel
 colorama==0.4.6
     # via typer
+confection==0.1.4
+    # via thinc
+    # via weasel
 contourpy==1.2.0
     # via matplotlib
 coqpit==0.0.17
@@ -76,21 +74,20 @@ coqpit==0.0.17
     # via tts
 cycler==0.12.1
     # via matplotlib
-cython==0.29.30
+cymem==2.0.8
+    # via preshed
+    # via spacy
+    # via thinc
+cython==3.0.9
     # via tts
 dateparser==1.1.8
     # via gruut
-dctorch==0.1.2
-    # via k-diffusion
 decorator==5.1.1
     # via librosa
-docker-pycreds==0.4.0
-    # via wandb
 docopt==0.6.2
     # via num2words
-einops==0.6.1
+einops==0.7.0
     # via encodec
-    # via k-diffusion
     # via tts
 encodec==0.1.1
     # via tts
@@ -102,7 +99,7 @@ filelock==3.13.1
     # via huggingface-hub
     # via torch
     # via transformers
-flask==2.3.3
+flask==3.0.2
     # via tts
 fonttools==4.49.0
     # via matplotlib
@@ -115,14 +112,8 @@ fsspec==2023.6.0
     # via torch
     # via trainer
     # via tts
-ftfy==6.1.3
-    # via clip-anytorch
 g2pkk==0.1.2
     # via tts
-gitdb==4.0.11
-    # via gitpython
-gitpython==3.1.42
-    # via wandb
 gradio==4.21.0
 gradio-client==0.12.0
     # via gradio
@@ -151,20 +142,18 @@ httpx==0.27.0
     # via gradio
     # via gradio-client
 huggingface-hub==0.21.4
-    # via accelerate
     # via gradio
     # via gradio-client
+    # via tokenizers
     # via transformers
 idna==3.6
     # via anyio
     # via httpx
     # via requests
     # via yarl
-imageio==2.34.0
-    # via scikit-image
 importlib-resources==6.3.0
     # via gradio
-inflect==5.6.2
+inflect==7.0.0
     # via tts
 iniconfig==2.0.0
     # via pytest
@@ -179,6 +168,7 @@ jinja2==3.1.3
     # via altair
     # via flask
     # via gradio
+    # via spacy
     # via torch
 joblib==1.3.2
     # via librosa
@@ -187,28 +177,22 @@ joblib==1.3.2
     # via scikit-learn
 jsonlines==1.2.0
     # via gruut
-jsonmerge==1.9.2
-    # via k-diffusion
 jsonschema==4.21.1
     # via altair
-    # via jsonmerge
 jsonschema-specifications==2023.12.1
     # via jsonschema
-k-diffusion==0.1.1.post1
-    # via tts
 kiwisolver==1.4.5
     # via matplotlib
-kornia==0.7.1
-    # via k-diffusion
+langcodes==3.3.0
+    # via spacy
 lazy-loader==0.3
     # via librosa
-    # via scikit-image
 librosa==0.10.1
     # via tts
 llvmlite==0.42.0
     # via numba
     # via pynndescent
-markdown==3.5.2
+markdown==3.6
     # via tensorboard
 markdown-it-py==3.0.0
     # via rich
@@ -228,9 +212,12 @@ msgpack==1.0.8
 multidict==6.0.5
     # via aiohttp
     # via yarl
+murmurhash==1.0.10
+    # via preshed
+    # via spacy
+    # via thinc
 networkx==2.8.8
     # via gruut
-    # via scikit-image
     # via torch
 nltk==3.8.1
     # via g2pkk
@@ -244,75 +231,70 @@ numba==0.59.0
     # via tts
     # via umap-learn
 numpy==1.26.4
-    # via accelerate
     # via altair
-    # via clean-fid
+    # via blis
     # via contourpy
-    # via dctorch
     # via encodec
     # via gradio
     # via gruut
-    # via imageio
     # via librosa
     # via matplotlib
     # via numba
     # via pandas
-    # via scikit-image
     # via scikit-learn
     # via scipy
     # via soxr
+    # via spacy
     # via tensorboard
-    # via tifffile
-    # via torchsde
-    # via torchvision
+    # via thinc
     # via transformers
     # via tts
     # via umap-learn
 orjson==3.9.15
     # via gradio
 packaging==23.1
-    # via accelerate
     # via altair
     # via gradio
     # via gradio-client
     # via huggingface-hub
-    # via kornia
     # via matplotlib
     # via pooch
     # via pytest
-    # via scikit-image
+    # via spacy
+    # via thinc
     # via transformers
     # via tts
+    # via weasel
 pandas==1.5.3
     # via altair
     # via gradio
     # via tts
 pillow==10.2.0
-    # via clean-fid
     # via gradio
-    # via imageio
-    # via k-diffusion
     # via matplotlib
-    # via scikit-image
-    # via torchvision
 platformdirs==4.2.0
     # via pooch
 pluggy==1.4.0
     # via pytest
 pooch==1.8.1
     # via librosa
-protobuf==4.25.3
+preshed==3.0.9
+    # via spacy
+    # via thinc
+protobuf==5.26.0
     # via tensorboard
-    # via wandb
 psutil==5.9.8
-    # via accelerate
     # via trainer
-    # via wandb
 pycparser==2.21
     # via cffi
 pydantic==2.6.4
+    # via confection
     # via fastapi
     # via gradio
+    # via inflect
+    # via spacy
+    # via thinc
+    # via weasel
 pydantic-core==2.16.3
     # via pydantic
 pydub==0.25.1
@@ -340,26 +322,23 @@ pytz==2024.1
     # via dateparser
     # via pandas
 pyyaml==6.0.1
-    # via accelerate
     # via gradio
     # via huggingface-hub
     # via transformers
     # via tts
-    # via wandb
 referencing==0.33.0
     # via jsonschema
     # via jsonschema-specifications
 regex==2023.12.25
-    # via clip-anytorch
     # via dateparser
     # via nltk
     # via transformers
 requests==2.31.0
-    # via clean-fid
     # via huggingface-hub
     # via pooch
+    # via spacy
     # via transformers
-    # via wandb
+    # via weasel
 rich==13.7.1
     # via typer
 rpds-py==0.18.0
@@ -368,46 +347,33 @@ rpds-py==0.18.0
 ruff==0.3.2
     # via gradio
 safetensors==0.4.2
-    # via accelerate
-    # via k-diffusion
     # via transformers
-scikit-image==0.22.0
-    # via k-diffusion
-scikit-learn==1.3.0
+scikit-learn==1.4.1.post1
     # via librosa
     # via pynndescent
     # via tts
     # via umap-learn
 scipy==1.12.0
-    # via clean-fid
-    # via dctorch
-    # via k-diffusion
     # via librosa
     # via pynndescent
-    # via scikit-image
     # via scikit-learn
-    # via torchdiffeq
-    # via torchsde
     # via tts
     # via umap-learn
 semantic-version==2.10.0
     # via gradio
-sentry-sdk==1.42.0
-    # via wandb
-setproctitle==1.3.3
-    # via wandb
 setuptools==69.2.0
+    # via spacy
     # via tensorboard
-    # via wandb
+    # via thinc
 shellingham==1.5.4
     # via typer
 six==1.16.0
-    # via docker-pycreds
     # via jsonlines
     # via python-dateutil
     # via tensorboard
-smmap==5.0.1
-    # via gitdb
+smart-open==6.4.0
+    # via spacy
+    # via weasel
 sniffio==1.3.1
     # via anyio
     # via httpx
@@ -417,74 +383,72 @@ soundfile==0.12.1
     # via tts
 soxr==0.3.7
     # via librosa
+spacy==3.7.4
+    # via tts
+spacy-legacy==3.0.12
+    # via spacy
+spacy-loggers==1.0.5
+    # via spacy
+srsly==2.4.8
+    # via confection
+    # via spacy
+    # via thinc
+    # via weasel
 starlette==0.36.3
     # via fastapi
+sudachidict-core==20240109
+    # via spacy
+sudachipy==0.6.8
+    # via spacy
+    # via sudachidict-core
 sympy==1.12
     # via torch
 tensorboard==2.16.2
     # via trainer
 tensorboard-data-server==0.7.2
     # via tensorboard
+thinc==8.2.3
+    # via spacy
 threadpoolctl==3.3.0
     # via scikit-learn
-tifffile==2024.2.12
-    # via scikit-image
-tokenizers==0.13.3
+tokenizers==0.15.2
     # via transformers
 tomlkit==0.12.0
     # via gradio
 toolz==0.12.1
     # via altair
 torch==2.2.1
-    # via accelerate
-    # via clean-fid
-    # via clip-anytorch
-    # via dctorch
     # via encodec
-    # via k-diffusion
-    # via kornia
     # via torchaudio
-    # via torchdiffeq
-    # via torchsde
-    # via torchvision
     # via trainer
     # via tts
     # via voice-puppet
 torchaudio==2.2.1
     # via encodec
     # via tts
-torchdiffeq==0.2.3
-    # via k-diffusion
-torchsde==0.2.6
-    # via k-diffusion
-torchvision==0.17.1
-    # via clean-fid
-    # via clip-anytorch
-    # via k-diffusion
 tqdm==4.64.1
-    # via clean-fid
-    # via clip-anytorch
     # via huggingface-hub
-    # via k-diffusion
     # via nltk
+    # via spacy
     # via transformers
     # via tts
     # via umap-learn
 trainer==0.0.36
     # via tts
-trampoline==0.1.2
-    # via torchsde
-transformers==4.33.3
+transformers==4.38.2
     # via tts
-tts @ git+https://github.com/cocktailpeanut/TTS@fede9eb892a8e9d9209b2544f5f4807cefd425d3
+tts==0.22.0
     # via voice-puppet
 typer==0.9.0
     # via gradio
+    # via spacy
+    # via weasel
 typing-extensions==4.10.0
     # via fastapi
     # via gradio
     # via gradio-client
     # via huggingface-hub
+    # via inflect
     # via librosa
     # via pydantic
     # via pydantic-core
@@ -498,13 +462,14 @@ unidecode==1.3.8
     # via tts
 urllib3==2.2.1
     # via requests
-    # via sentry-sdk
 uvicorn==0.28.0
     # via gradio
-wandb==0.16.4
-    # via k-diffusion
-wcwidth==0.2.13
-    # via ftfy
+wasabi==1.1.2
+    # via spacy
+    # via thinc
+    # via weasel
+weasel==0.3.4
+    # via spacy
 websockets==11.0.3
     # via gradio-client
 werkzeug==3.0.1
