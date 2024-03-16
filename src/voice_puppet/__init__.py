@@ -9,6 +9,8 @@ warnings.filterwarnings("ignore")
 
 tts = None
 
+os.environ["COQUI_TOS_AGREED"] = "1"
+
 
 @dataclass
 class Line:
@@ -36,7 +38,7 @@ class Script:
                 yield line
 
 
-def load_tts(model="/tts_models/multilingual/multi-dataset/bark", device="cpu"):
+def load_tts(model="tts_models/multilingual/multi-dataset/xtts_v2", device="cpu"):
     global tts
 
     if tts is not None:
@@ -45,7 +47,7 @@ def load_tts(model="/tts_models/multilingual/multi-dataset/bark", device="cpu"):
     from TTS.api import TTS
     import torch
 
-    tts = TTS("tts_models/multilingual/multi-dataset/bark")
+    tts = TTS(model)
     # tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2")
 
     if device == "cuda" and torch.cuda.is_available():
@@ -80,7 +82,7 @@ def test_generate():
 
 
 def generate(text: str, source: str, output: str = "output.wav"):
-    tts.tts_to_file(text=text, file_path=output, speaker_wav=source)
+    tts.tts_to_file(text=text, file_path=output, speaker_wav=source, language="en")
 
 
 def generate_from_script(script_content: str, voices: str, output: str):
@@ -172,7 +174,7 @@ def main():
         "-m",
         type=str,
         help="TTS model",
-        default="tts_models/multilingual/multi-dataset/bark",
+        default="tts_models/multilingual/multi-dataset/xtts_v2",
     )
 
     parser.add_argument(
