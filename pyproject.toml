@@ -1,6 +1,6 @@
 [project]
 name = "voice-puppet"
-version = "0.1.0"
+version = "0.2.0"
 description = "Experimentation with voice cloning for performance."
 authors = [
     { name = "Sam Lavigne", email = "splavigne@gmail.com" }
@@ -19,8 +19,7 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = [
-    "pytest>=8.1.1",
-    "gradio>=4.21.0",
+    "pytest>=8.1.1"
 ]
 
 [tool.hatch.metadata]
