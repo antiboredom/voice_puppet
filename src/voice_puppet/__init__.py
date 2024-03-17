@@ -82,7 +82,10 @@ def test_generate():
 
 
 def generate(text: str, source: str, output: str = "output.wav"):
-    tts.tts_to_file(text=text, file_path=output, speaker_wav=source, language="en")
+    try:
+        tts.tts_to_file(text=text, file_path=output, speaker_wav=source, language="en")
+    except Exception:
+        tts.tts_to_file(text=text, file_path=output, speaker_wav=source)
 
 
 def generate_from_script(script_content: str, voices: str, output: str):
